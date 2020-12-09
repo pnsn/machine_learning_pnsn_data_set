@@ -9,7 +9,47 @@ This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.
 -E3 applies a teleseismic filter using multiple narrow band filters, I don't.
 -E3 checks if trigger is a boxcar, I don't.
 
-Histograms made using make_histogram.py
+## The 4 sub data sets of sources, 2010.1 - 2020.12
+- *M4.0 - M5.0 west coast:
+
+https://prod-earthquake.cr.usgs.gov/fdsnws/event/1/query?&starttime=2009-12-31T23:25:00&endtime=2025-01-01T01:01:00&minlatitude=25.&maxlatitude=55.&minlongitude=-135.&maxlongitude=-100.&minmagnitude=4.0&maxmagnitude=5.0&format=text
+
+- *M5.0+ North America:
+
+https://prod-earthquake.cr.usgs.gov/fdsnws/event/1/query?&starttime=2009-12-31T23:25:00&endtime=2025-01-01T01:01:00&minlatitude=20.&maxlatitude=65.&minlongitude=-165.&maxlongitude=-75.&minmagnitude=5.0&format=text
+
+- *Shallow (z < 100 km) Global M6.0+:
+
+https://prod-earthquake.cr.usgs.gov/fdsnws/event/1/query?&starttime=2009-12-31T23:25:00&endtime=2025-01-01T01:01:00&minmagnitude=6.0&maxdepth=100&format=text
+
+- *Deep (z > 100 km) Global M6.0+:
+
+https://prod-earthquake.cr.usgs.gov/fdsnws/event/1/query?&starttime=2009-12-31T23:25:00&endtime=2025-01-01T01:01:00&minmagnitude=6.0&mindepth=100&format=text
+
+## The stations used
+Note: this only uses the IRIS FDSNWS client so many CI/BK/NC stations were not harvested.  For those, add in a try statement and use the SCEDC/NCEDC clients which are trivial modifications using obspy.
+- For 6-channel sites, I only collected the broadband data and not the strong motion data.  The result is that the remaining strong motion Pwavelets are from sites that are only 3 or 4 channels which are usually noisier than 6-channel sites.
+
+
+*Broadbands:
+
+"http://service.iris.edu/fdsnws/station/1/query?level=channel&network=AZ,CI,BK,NC,OO,US,CC,UO,UW,CN,NN,IU,II&channel=BHE,HHE,BH1,HH1&starttime=2018-01-01T00:00:00&endtime=2599-01-01T00:00:00&format=text"
+
+*Strong motions:
+
+"http://service.iris.edu/fdsnws/station/1/query?level=channel&network=AZ,CI,BK,NC,OO,US,CC,UO,UW,CN,NN,IU,II&channel=ENE,HNE&starttime=2018-01-01T00:00:00&endtime=2599-01-01T00:00:00&format=text"
+
+
+## Histograms of data
+Histograms made using make_histogram.py (as of Dec 8, maybe 2/3? done collecting entire data set)
+
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/Distances_histogram.png" width=550 alt="Histogram of distances" />
+
+
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/Mags_histogram.png" width=550 alt="Histogram of magnitudes" />
+
+
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/Staltas_histogram.png" width=550 alt="Histogram of STA/LTA ratios" />
 
 
 -----------------
@@ -67,9 +107,8 @@ Data are initially aligned on the predicted P wave arrival using iasp91.  From ~
 ## Figures
 
 ## Shortcomings & caveats
-- This only downloads data from IRIS.  To get all/more of the CI/BK/NC data, update the code to first try IRIS, then SCEDC or NCEDC.
+- This only downloads data from IRIS.  To get all/more of the CI/BK/NC data, update the code to first try IRIS, then SCEDC or NCEDC.  Also, see above regarding 6 vs 3-channel sites.
 - The counter I put in to limit the number of Pwavelets for any given station to 100 didn't had a bug and didn't work.  The result is some stations have many more than 100 Pwavelets, not necessarily a bad thing and the end user can decide how to select their data.
-- For 6-channel sites, I only collected the broadband data and not the strong motion data.  The result is that the remaining strong motion Pwavelets are from sites that are only 3 or 4 channels which are usually noisier than 6-channel sites.
 - Be careful with data from 10-30 (regional, mantle triplications) and bw 100-120 degrees (Pdiff/PKP) where the predicted arrival might be more than the +/-5s that I assumed and hence the processing may not properly align on the arrival and may not get the "Trigger" label correct.  A quick visual inspection can remedy this.
 
 ## Don't download data too fast!
