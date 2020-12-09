@@ -8,6 +8,9 @@ This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.
 -E3 considers horizontal channels and has H/V amplitude checks, I don't.
 -E3 applies a teleseismic filter using multiple narrow band filters, I don't.
 -E3 checks if trigger is a boxcar, I don't.
+-add AQMS non-seismic noise sources
+-add link to seismo https://seismo.ess.washington.edu/users/ahutko (tar .mseed, .hdf5, .png)
+-explain naming of output files
 
 ### The 4 sub data sets of sources, 2010.1 - 2020.12
 - M4.0 - M5.0 west coast:
