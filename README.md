@@ -46,6 +46,8 @@ Note: this only uses the IRIS FDSNWS client so many CI/BK/NC stations were not h
 ### Histograms of data
 Histograms made using make_histogram.py (as of Dec 8, maybe 2/3? done collecting entire data set)
 
+XXX gotta fix these, not sure why some regularly spaced bin appear gappy XXX
+
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/Distances_histogram.png" width=550 alt="Histogram of distances" />
 
 
@@ -117,10 +119,11 @@ The four panels from top to bottom show:
 - These figures are aligned with the 'pick' time at 25 sec in the bottom panel.  The output files are from -5 to +10 sec of this time (20 - 35 sec in this plot).
 
 ### Shortcomings, caveats, & things to fix before next time
-- This only downloads data from IRIS.  To get all/more of the CI/BK/NC data, update the code to first try IRIS, then SCEDC or NCEDC.  Also, see above regarding 6 vs 3-channel sites.
-- The counter I put in to limit the number of Pwavelets for any given station to 100 didn't had a bug and didn't work.  The result is some stations have many more than 100 Pwavelets, not necessarily a bad thing and the end user can decide how to select their data.
+- This only downloads data from IRIS.  To get all/more of the CI/BK/NC data, update the code to first try IRIS, then SCEDC or NCEDC.  Also, see "stations used" above regarding 6 vs 3-channel sites.
+- The counter I put in to limit the number of Pwavelets for any given station to 100 had a bug and didn't get used.  The result is many stations have many more than 100 Pwavelets, not necessarily a bad thing and the end user can decide how to select their data.  Without the bug, the code randomly samples within the 4 lists of earthquake sources.
 - Be careful with data from 10-30 (regional, mantle triplications) and bw 100-120 degrees (Pdiff/PKP) where the predicted arrival might be more than the +/-5s that I assumed and hence the processing may not properly align on the arrival and may not get the "Trigger" label correct.  A quick visual inspection can remedy this.
 - Be aware that some stations have multiple locations with very similar waveforms (but from different instruments).  An example is IW.WCI.00.BHZ, IW.WCI.10.BHZ, IW.WCI.00.HHZ.
+- I was a bit lazy with stations.  To form a station list I only queried stations from 2018-2020, so if there was a station that ended before 2018, it wasn't included in the data harvest.  It's very minor.  Also I ignored epochs, e.g. when a station was BHZ in older times and later got upgraded to HHZ.
 - Make x-axis time in plot for the bottom STA/LTA trace go from -25 to +35 rather than 0-60; add tick mark on the other panels for pick time.  Add a 5th panel w the 3Hz highpassed vel trace?
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BHZ.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.png" width=550 alt="Histogram of distances" />
