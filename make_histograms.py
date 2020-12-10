@@ -242,7 +242,7 @@ for i in range(0,4):    #--- just to make binning the same
     xY[i].append(max(x[i]))
     xN[i].append(min(x[i]))
     xN[i].append(max(x[i]))
-nbins = int(10*(max(x[0]) - min(x[0])))
+nbins = int(10*(max(x[0]) - min(x[0]))) +1
 plt.rcParams['font.size'] = '6'
 fig, axs = plt.subplots(2, 2)
 axs[0,0].set_title('M4-5 West Coast')
@@ -250,18 +250,18 @@ axs[0,0].hist([xY[0],xN[0]],nbins,stacked=True,label=('nTrig='+str(len(xY[0])),'
 axs[0,0].legend(prop={'size': 8})
 axs[0,0].set_ylabel('N P-wavelets')
 
-nbins = int(10*(max(x[1]) - min(x[1])))
+nbins = int(10*(max(x[1]) - min(x[1]))) +1
 axs[0,1].set_title('North Am. M>5')
 axs[0,1].hist([xY[1],xN[1]],nbins,stacked=True,label=('nTrig='+str(len(xY[1])),'nTotal='+str(len(x[1]))))
 axs[0,1].legend(prop={'size': 8})
 
-nbins = int(10*(max(x[2]) - min(x[2])))
+nbins = int(10*(max(x[2]) - min(x[2]))) +1
 axs[1,0].set_title('Global z<100 km M>=6')
 axs[1,0].hist([xY[2],xN[2]],nbins,stacked=True,label=('nTrig='+str(len(xY[2])),'nTotal='+str(len(x[2]))))
 axs[1,0].legend(prop={'size': 8})
 axs[1,0].set_ylabel('N P-wavelets')
 
-nbins = int(10*(max(x[3]) - min(x[3])))
+nbins = int(10*(max(x[3]) - min(x[3]))) +1
 axs[1,1].set_title('Global z>100 km M>=6')
 axs[1,1].hist([xY[3],xN[3]],nbins,stacked=True,label=('nTrig='+str(len(xY[3])),'nTotal='+str(len(x[3]))))
 axs[1,1].legend(prop={'size': 8})
