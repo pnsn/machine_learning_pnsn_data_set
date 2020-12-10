@@ -201,9 +201,14 @@ plt.savefig(figname, dpi=180)
 nbins = 18
 x = distances
 xY = distancesY
-xY.append(max(distances))  #--- just to make binning the same
-xY.append(min(distances))
 xN = distancesN
+for i in range(0,4):   #--- just to make binning the same
+    x[i].append(180)
+    xY[i].append(180)
+    xN[i].append(180)
+    x[i].append(0)
+    xY[i].append(0)
+    xN[i].append(0)
 plt.rcParams['font.size'] = '6'
 fig, axs = plt.subplots(2, 2)
 axs[0,0].set_title('M4-5 West Coast (cut off at 20k)')
@@ -231,9 +236,12 @@ plt.savefig(figname, dpi=180)
 #----- histogram of magnitudes
 x = mags
 xY = magsY
-magsY.append(min(mags))
-magsY.append(max(mags))
 xN = magsN
+for i in range(0,4):    #--- just to make binning the same
+    xY[i].append(min(x[i]))
+    xY[i].append(max(x[i]))
+    xN[i].append(min(x[i]))
+    xN[i].append(max(x[i]))
 nbins = int(10*(max(x[0]) - min(x[0]))) +1
 plt.rcParams['font.size'] = '6'
 fig, axs = plt.subplots(2, 2)
@@ -261,13 +269,16 @@ fig.suptitle('Magnitudes',fontsize=12)
 figname = 'Mags_histogram.png'
 plt.savefig(figname, dpi=180)
 
-#----- histogram of distances
+#----- histogram of staltas
 nbins = 18
 x = staltas
 xY = staltasY
-xY.append(max(staltas))  #--- just to make binning the same
-xY.append(min(staltas))
 xN = staltasN
+for i in range(0,4):    #--- just to make binning the same
+    xY[i].append(min(x[i]))
+    xY[i].append(max(x[i]))
+    xN[i].append(min(x[i]))
+    xN[i].append(max(x[i]))
 plt.rcParams['font.size'] = '6'
 fig, axs = plt.subplots(2, 2)
 axs[0,0].set_title('M4-5 West Coast')
