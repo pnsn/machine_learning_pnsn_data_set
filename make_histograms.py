@@ -209,12 +209,12 @@ fig, axs = plt.subplots(2, 2)
 axs[0,0].set_title('M4-5 West Coast')
 axs[0,0].hist([xY[0],xN[0]],nbins,stacked=True,label=('nTrig='+str(len(xY[0])),'nTotal='+str(len(x[0]))))
 axs[0,0].legend(prop={'size': 8})
-axs[0,1].set_ylim([0,20000])
+axs[0,0].set_ylim([0,20000])
+axs[0,0].set_ylabel('N P-wavelets')
 
 axs[0,1].set_title('North Am. M>5')
 axs[0,1].hist([xY[1],xN[1]],nbins,stacked=True,label=('nTrig='+str(len(xY[1])),'nTotal='+str(len(x[1]))))
 axs[0,1].legend(prop={'size': 8})
-axs[0,1].set_ylabel('N P-wavelets')
 
 axs[1,0].set_title('Global z<100 km M>=6')
 axs[1,0].hist([xY[2],xN[2]],nbins,stacked=True,label=('nTrig='+str(len(xY[2])),'nTotal='+str(len(x[2]))))
@@ -240,12 +240,12 @@ fig, axs = plt.subplots(2, 2)
 axs[0,0].set_title('M4-5 West Coast')
 axs[0,0].hist([xY[0],xN[0]],nbins,stacked=True,label=('nTrig='+str(len(xY[0])),'nTotal='+str(len(x[0]))))
 axs[0,0].legend(prop={'size': 8})
+axs[0,0].set_ylabel('N P-wavelets')
 
 nbins = int(10*(max(x[1]) - min(x[1]))) +1
 axs[0,1].set_title('North Am. M>5')
 axs[0,1].hist([xY[1],xN[1]],nbins,stacked=True,label=('nTrig='+str(len(xY[1])),'nTotal='+str(len(x[1]))))
 axs[0,1].legend(prop={'size': 8})
-axs[0,1].set_ylabel('N P-wavelets')
 
 nbins = int(10*(max(x[2]) - min(x[2]))) +1
 axs[1,0].set_title('Global z<100 km M>=6')
@@ -273,11 +273,11 @@ fig, axs = plt.subplots(2, 2)
 axs[0,0].set_title('M4-5 West Coast')
 axs[0,0].hist([xY[0],xN[0]],nbins,stacked=True,label=('nTrig='+str(len(xY[0])),'nTotal='+str(len(x[0]))))
 axs[0,0].legend(prop={'size': 8})
+axs[0,0].set_ylabel('N P-wavelets')
 
 axs[0,1].set_title('North Am. M>5')
 axs[0,1].hist([xY[1],xN[1]],nbins,stacked=True,label=('nTrig='+str(len(xY[1])),'nTotal='+str(len(x[1]))))
 axs[0,1].legend(prop={'size': 8})
-axs[0,1].set_ylabel('N P-wavelets')
 
 axs[1,0].set_title('Global z<100 km M>=6')
 axs[1,0].hist([xY[2],xN[2]],nbins,stacked=True,label=('nTrig='+str(len(xY[2])),'nTotal='+str(len(x[2]))))
