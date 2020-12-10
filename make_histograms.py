@@ -206,7 +206,7 @@ xY.append(min(distances))
 xN = distancesN
 plt.rcParams['font.size'] = '6'
 fig, axs = plt.subplots(2, 2)
-axs[0,0].set_title('M4-5 West Coast')
+axs[0,0].set_title('M4-5 West Coast (cut off at 20k)')
 axs[0,0].hist([xY[0],xN[0]],nbins,stacked=True,label=('nTrig='+str(len(xY[0])),'nTotal='+str(len(x[0]))))
 axs[0,0].legend(prop={'size': 8})
 axs[0,0].set_ylim([0,20000])
