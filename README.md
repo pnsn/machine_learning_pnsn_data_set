@@ -11,6 +11,9 @@ This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.
 -add AQMS non-seismic noise sources
 -add link to seismo https://seismo.ess.washington.edu/users/ahutko (tar .mseed, .hdf5, .png)
 -explain naming of output files
+[Go to Shortcomings, caveats section to see differences w Elarms3](#Shortcomings,-caveats,-&-things-to-fix-before-next-time)
+
+
 
 ### The 4 sub data sets of sources, 2010.1 - 2020.12
 - M4.0 - M5.0 west coast:
@@ -142,6 +145,9 @@ CI.CIA.--.HH.2019.12.03T08.46.35.M6.0.d69.z38.Lat-18.5042.Lon-70.576.stalta11.Tr
 - Be aware that some stations have multiple locations with very similar waveforms (but from different instruments).  An example is IW.WCI.00.BHZ, IW.WCI.10.BHZ, IW.WCI.00.HHZ.
 - I was a bit lazy with stations.  To form a station list I only queried stations from 2018-2020, so if there was a station that ended before 2018, it wasn't included in the data harvest.  It's very minor.  Also I ignored epochs, e.g. when a station was BHZ in older times and later got upgraded to HHZ.
 - Make x-axis time in plot for the bottom STA/LTA trace go from -25 to +35 rather than 0-60; add tick mark on the other panels for pick time.  Add a 5th panel w the 3Hz highpassed vel trace?
+- Elarms3 uses units of cm/s and cm/s^2.  I use m/s and m/s^2.
+- Elarms3 has additional criteria for determining a trigger including an H/V amplitude check, boxcar check, and multiple amplitude checks within 11 different narrow band filters.  Those have been ignored here.
+- Elarms3 applies the mimimum trigger amplitude criteria (i.e. the 0.000031623 m/s^2) within 4s (I think) of the trigger defined as when STA/LTA first exceeds 20.  Here, that amplitude check is applied in the entire window of -5 to +10 sec around the STA/LTA 'pick' time.
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/BHZ_vs_HHZ.jpg" width=750 alt="Same station, BHZ and HHZ" />
 Figure 5: This is an example of the same station recording the same event, but on different channels, BHZ vs HHZ.  Pay attention to the differing STA/LTA ratios.  Just an FYI...
