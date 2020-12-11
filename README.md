@@ -11,7 +11,7 @@ This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.
 -add AQMS non-seismic noise sources
 -add link to seismo https://seismo.ess.washington.edu/users/ahutko (tar .mseed, .hdf5, .png)
 -explain naming of output files
-[Go to Shortcomings, caveats section to see differences w Elarms3](#Shortcomings,-caveats,-&-things-to-fix-before-next-time)
+[Go to Shortcomings, caveats section to see differences w Elarms3](###Shortcomings, caveats, & things to fix before next time)
 
 
 
