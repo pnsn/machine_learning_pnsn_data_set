@@ -109,8 +109,11 @@ Data are initially aligned on the predicted P wave arrival using iasp91.  From ~
 
 Filenames:
 d = distance, z = depth in km, Lat, Lon, max(STA/LTA ratio from -5 to +10 sec around pick time.
+
 Trigger: does the trace have STA/LTA ratio > 20 AND is peak amplitude on Acc trace > 0.000031623 m/s^2.
+
 CI.CIA.--.HH.2019.12.03T08.46.35.M6.0.d69.z38.Lat-18.5042.Lon-70.576.stalta11.Trigger_NO.hdf5
+
 CI.CIA.--.HH.2019.12.03T08.46.35.M6.0.d69.z38.Lat-18.5042.Lon-70.576.stalta11.Trigger_NO.mseed
 
 ### Figures
@@ -131,7 +134,9 @@ These figures are aligned with the STA/LTA 'pick' time at 25 sec in the bottom p
 
 Filenames:
 d = distance, z = depth in km, Lat, Lon, max(STA/LTA ratio from -5 to +10 sec around pick time.
+
 Trigger: does the trace have STA/LTA ratio > 20 AND is peak amplitude on Acc trace > 0.000031623 m/s^2.
+
 CI.CIA.--.HHZ.2019.12.03T08.46.35.M6.0.d69.z38.Lat-18.5042.Lon-70.576.stalta11.Trigger_NO.png
 
 ### Shortcomings, caveats, & things to fix before next time
