@@ -9,10 +9,11 @@ This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.
 -E3 applies a teleseismic filter using multiple narrow band filters, I don't.
 -E3 checks if trigger is a boxcar, I don't.
 -add AQMS non-seismic noise sources
--add link to seismo https://seismo.ess.washington.edu/users/ahutko (tar .mseed, .hdf5, .png)
--explain naming of output files
-[Go to Shortcomings, caveats section to see differences w Elarms3](###Shortcomings,-caveats,-&-things-to-fix-before-next-time)
 
+Download tarballs of the dataset:
+https://seismo.ess.washington.edu/users/ahutko/machine_learning_pnsn_data_set (tar .mseed, .hdf5, .png)
+
+*Go to Shortcomings, caveats section at bottom of page to see differences w Elarms3*
 
 
 ### The 4 sub data sets of sources, 2010.1 - 2020.12
