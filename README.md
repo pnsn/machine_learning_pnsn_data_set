@@ -9,7 +9,7 @@ There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. ava
 Data set of P-wavelets from PNSN and other stations prepared for ML.
 
 The Trigger label:
-This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>.  Notable differences is that Elarms3 has many criteria for declaring a bump a trigger.  The "Trigger" label here only uses the two primary ones: 1) whether the STA/LTA (0.05sec/5.0sec) function of 3Hz highpassed velocity data exceeds 20 and 2) if the peak amplitude exceeds 0.000031623 m/s^2 on sensitivity corrected acceleration traces high pass filtered above 0.075 Hz.  This is applied to data from strong motion as well as broadband stations.
+This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>.  Notable differences is that Elarms3 has many criteria for declaring a bump a trigger.  The "Trigger" label here only uses the two primary ones: 1) whether the STA/LTA (0.05sec/5.0sec) function of 3Hz highpassed velocity data exceeds 20 and 2) if the peak amplitude exceeds 0.000031623 m/s^2 on sensitivity corrected acceleration traces high pass filtered above 0.075 Hz.  This is applied to data from strong motion as well as broadband stations.  All data are initially sensitivity corrected and, if needed, resampled to 100 Hz.
 
 *Go to Shortcomings, caveats section at bottom of page to see differences w Elarms3*
 
@@ -50,13 +50,13 @@ Note: this only uses the IRIS FDSNWS client so many CI/BK/NC stations were not h
 ### Histograms of data
 Histograms made using make_histogram.py (as of Dec 8, maybe 2/3? done collecting entire data set)
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/Distances_histogram.png" width=550 alt="Histogram of distances" />
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/Distances_histogram.png" width=550 alt="Histogram of distances" />
 
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/Mags_histogram.png" width=550 alt="Histogram of magnitudes" />
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/Mags_histogram.png" width=550 alt="Histogram of magnitudes" />
 
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/Staltas_histogram.png" width=550 alt="Histogram of STA/LTA ratios" />
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/Staltas_histogram.png" width=550 alt="Histogram of STA/LTA ratios" />
 
 
 -----------------
@@ -114,7 +114,7 @@ Data are initially aligned on the predicted P wave arrival using iasp91.  From ~
 ### Figures
 For each output file, there is an associated figure like this one:
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.TUQ.--.BHZ.2017.04.03T17.40.18.M6.5.d143.z29.Lat-22.6784.Lon25.1558.stalta22.Trigger_YES.png" width=550 alt="Histogram of distances" />
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/CI.TUQ.--.BHZ.2017.04.03T17.40.18.M6.5.d143.z29.Lat-22.6784.Lon25.1558.stalta22.Trigger_YES.png" width=550 alt="Histogram of distances" />
 The four panels from top to bottom show:
 
 - The raw trace in counts
@@ -150,13 +150,13 @@ CI.CIA.--.HH.2019.12.03T08.46.35.M6.0.d69.z38.Lat-18.5042.Lon-70.576.stalta11.Tr
 - Elarms3 has additional criteria for determining a trigger including an H/V amplitude check, boxcar check, and multiple amplitude checks within 11 different narrow band filters.  Those have been ignored here.
 - Elarms3 applies the mimimum trigger amplitude criteria (i.e. the 0.000031623 m/s^2) within 4s (I think) of the trigger defined as when STA/LTA first exceeds 20.  Here, that amplitude check is applied in the entire window of -5 to +10 sec around the STA/LTA 'pick' time.
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/BHZ_vs_HHZ.jpg" width=750 alt="Same station, BHZ and HHZ" />
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/BHZ_vs_HHZ.jpg" width=750 alt="Same station, BHZ and HHZ" />
 Figure 5: This is an example of the same station recording the same event, but on different channels, BHZ vs HHZ.  Pay attention to the differing STA/LTA ratios.  Just an FYI...
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BHZ.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.png" width=550 alt="Histogram of distances" />
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/CI.SLA.--.BHZ.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.png" width=550 alt="Histogram of distances" />
 Figure 6: Clealy this event would be easy to align using an STA/LTA with a longer STA window than 0.05s.  Maybe in a different, non-Elarms3-centric iteration, use an approach that take the max STA/LTA ratio of either 0.05 or 0.5 s for the STA.  And a bandpass of 0.3 - 1.0 Hz instead of a 3 Hz highpass on the velocity trace used for the STA/LTA function.  Or a real picker, or NEIC picks etc...
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BHZ.2020.06.18T12.49.53.M7.4.d89.z10.Lat-33.2927.Lon-177.8571.stalta22.Trigger_YES.png" width=550 alt="Histogram of distances" />
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/CI.SLA.--.BHZ.2020.06.18T12.49.53.M7.4.d89.z10.Lat-33.2927.Lon-177.8571.stalta22.Trigger_YES.png" width=550 alt="Histogram of distances" />
 Figure 7: Clealy this event is aligned wrong since this is being tuned for EPIC triggering which has an STA/LTA ratio threshold of 20.
 
 ### Don't download data too fast!
