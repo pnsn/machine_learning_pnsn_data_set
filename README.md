@@ -3,18 +3,12 @@ Data set of P-wavelets and noise from PNSN and other stations for use by ML
 
 The Trigger label:
 This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>.  Notable differences is that Elarms3 has many criteria for declaring a bump a trigger.  This label only uses the two primary ones: 1) whether the STA/LTA (0.05sec/5.0sec) function of 3Hz highpassed velocity data exceeds 20 and 2) if the peak amplitude exceeds 0.000031623 m/s^2.  
--E3 searches for the peak amplitude in a limited (4 sec?) window following the trigger, I'm using peak amplitude in the entire window from -5 to +10 sec.  
--E3 uses cm, I use m.
--E3 considers horizontal channels and has H/V amplitude checks, I don't.
--E3 applies a teleseismic filter using multiple narrow band filters, I don't.
--E3 checks if trigger is a boxcar, I don't.
 -add AQMS non-seismic noise sources
-
-Download tarballs of the dataset:
-https://seismo.ess.washington.edu/users/ahutko/machine_learning_pnsn_data_set (tar .mseed, .hdf5, .png)
 
 *Go to Shortcomings, caveats section at bottom of page to see differences w Elarms3*
 
+Download tarballs of the dataset:
+https://seismo.ess.washington.edu/users/ahutko/machine_learning_pnsn_data_set
 
 ### The 4 sub data sets of sources, 2010.1 - 2020.12
 - M4.0 - M5.0 west coast:
