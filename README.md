@@ -112,10 +112,15 @@ Data are initially aligned on the predicted P wave arrival using iasp91.  From ~
 ### Figures
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.TUQ.--.BHZ.2017.04.03T17.40.18.M6.5.d143.z29.Lat-22.6784.Lon25.1558.stalta22.Trigger_YES.png" width=550 alt="Histogram of distances" />
 The four panels from top to bottom show:
+
 - The raw trace in counts
+
 - The sensitivity-corrected acceleration trace high-pass filtered above 0.075 Hz. This is used for Trigger labeling, the red line is the minimum Acc threshold for trigging EPIC (0.000031623 m/s^2).
+
 - The sensitivity-corrected velocity trace high-pass filtered above 0.075 Hz (This is the output file)
+
 - The STA/LTA function which uses a (not shown) velocity trace highpass filtered above 3 Hz.
+
 - These figures are aligned with the 'pick' time at 25 sec in the bottom panel.  The output files are from -5 to +10 sec of this time (20 - 35 sec in this plot).
 
 ### Shortcomings, caveats, & things to fix before next time
