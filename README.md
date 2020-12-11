@@ -154,7 +154,7 @@ CI.CIA.--.HH.2019.12.03T08.46.35.M6.0.d69.z38.Lat-18.5042.Lon-70.576.stalta11.Tr
 Figure 5: This is an example of the same station recording the same event, but on different channels, BHZ vs HHZ.  Pay attention to the differing STA/LTA ratios.  Just an FYI...
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BHZ.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.png" width=550 alt="Histogram of distances" />
-Figure 6: Clealy this event would be easy to align using an STA/LTA with a longer STA window than 0.05s.  Maybe next iteration, use an approach that take the max STA/LTA ratio of either 0.05 or 0.5 s for the STA.
+Figure 6: Clealy this event would be easy to align using an STA/LTA with a longer STA window than 0.05s.  Maybe in a different, non-Elarms3-centric iteration, use an approach that take the max STA/LTA ratio of either 0.05 or 0.5 s for the STA.  And a bandpass of 0.3 - 1.0 Hz instead of a 3 Hz highpass on the velocity trace used for the STA/LTA function.  Or a real picker, or NEIC picks etc...
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BHZ.2020.06.18T12.49.53.M7.4.d89.z10.Lat-33.2927.Lon-177.8571.stalta22.Trigger_YES.png" width=550 alt="Histogram of distances" />
 Figure 7: Clealy this event is aligned wrong since this is being tuned for EPIC triggering which has an STA/LTA ratio threshold of 20.
