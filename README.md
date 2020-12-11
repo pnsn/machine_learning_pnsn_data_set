@@ -6,10 +6,10 @@ There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. ava
 
 ## Regional and Teleseismic data set first P-arrivals
 
-Data set of P-wavelets and noise from PNSN and other stations prepared for ML.
+Data set of P-wavelets from PNSN and other stations prepared for ML.
 
 The Trigger label:
-This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>.  Notable differences is that Elarms3 has many criteria for declaring a bump a trigger.  This label only uses the two primary ones: 1) whether the STA/LTA (0.05sec/5.0sec) function of 3Hz highpassed velocity data exceeds 20 and 2) if the peak amplitude exceeds 0.000031623 m/s^2.  This is true for data from strong motion stations as well as broadband stations.
+This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>.  Notable differences is that Elarms3 has many criteria for declaring a bump a trigger.  The "Trigger" label here only uses the two primary ones: 1) whether the STA/LTA (0.05sec/5.0sec) function of 3Hz highpassed velocity data exceeds 20 and 2) if the peak amplitude exceeds 0.000031623 m/s^2 on sensitivity corrected acceleration traces high pass filtered above 0.075 Hz.  This is applied to data from strong motion as well as broadband stations.
 
 *Go to Shortcomings, caveats section at bottom of page to see differences w Elarms3*
 
