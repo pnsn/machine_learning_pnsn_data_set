@@ -46,8 +46,6 @@ Note: this only uses the IRIS FDSNWS client so many CI/BK/NC stations were not h
 ### Histograms of data
 Histograms made using make_histogram.py (as of Dec 8, maybe 2/3? done collecting entire data set)
 
-XXX gotta fix these, not sure why some regularly spaced bin appear gappy XXX
-
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/Distances_histogram.png" width=550 alt="Histogram of distances" />
 
 
@@ -105,37 +103,42 @@ write output
 ```
 
 ### Output .HDF5/.mseed files:
-Files of P-waves are given in either mseed or HDF5 format.  In each file, all 3 components are present and are aligned from -5 to +10 sec of the P-wave arrival.  All traces are velocity in units of m/s, 100 Hz sampling.  .mseed and .hdf5 files are available <a href="https://seismo.ess.washington.edu/users/ahutko/ML_data_sets">here.</a> 
+Files of P-waves are given in either mseed or HDF5 format.  In each file, all 3 components are present and are aligned from -5 to +10 sec of the STA/LTA 'picked' P-wave arrival.  All traces are velocity in units of m/s, 100 Hz sampling.  .mseed and .hdf5 files are available <a href="https://seismo.ess.washington.edu/users/ahutko/ML_data_sets">here.</a> 
 
 Data are initially aligned on the predicted P wave arrival using iasp91.  From ~90 to 107 degrees P/Pdiff is the time given.  From 107 to 180 the earliest PKP arrival is used.  The data are then shifted according the STA/LTA ratio using a window of -5 to +10 seconds around the predicted P-arrival.  The shift corresponds to when the STA/LTA first exceeds 20.  If it does not exceed 20 in the window, then the data are shifted to align on the maximum of the STA/LTA function.  The window for shfited data is -5 to +10 sec.
 
 ### Figures
+For each output file, there is an associated figure like this one:
+
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.TUQ.--.BHZ.2017.04.03T17.40.18.M6.5.d143.z29.Lat-22.6784.Lon25.1558.stalta22.Trigger_YES.png" width=550 alt="Histogram of distances" />
 The four panels from top to bottom show:
 
 - The raw trace in counts
 
-- The sensitivity-corrected acceleration trace high-pass filtered above 0.075 Hz. This is used for Trigger labeling, the red line is the minimum Acc threshold for trigging EPIC (0.000031623 m/s^2).
+- The sensitivity-corrected acceleration trace high-pass filtered above 0.075 Hz. This is used for Trigger labeling, the red line is the minimum Acc threshold for trigging EPIC (0.000031623 m/s^2).  Units are m/s^2.
 
-- The sensitivity-corrected velocity trace high-pass filtered above 0.075 Hz (This is the output file)
+- The sensitivity-corrected velocity trace high-pass filtered above 0.075 Hz (This is the output file).  Units are m/s.
 
 - The STA/LTA function which uses a (not shown) velocity trace highpass filtered above 3 Hz.
 
-- These figures are aligned with the 'pick' time at 25 sec in the bottom panel.  The output files are from -5 to +10 sec of this time (20 - 35 sec in this plot).
+These figures are aligned with the STA/LTA 'pick' time at 25 sec in the bottom panel.  The output files are from -5 to +10 sec of this time (20 - 35 sec in this plot).
 
 ### Shortcomings, caveats, & things to fix before next time
 - This only downloads data from IRIS.  To get all/more of the CI/BK/NC data, update the code to first try IRIS, then SCEDC or NCEDC.  Also, see "stations used" above regarding 6 vs 3-channel sites.
 - The counter I put in to limit the number of Pwavelets for any given station to 100 had a bug and didn't get used.  The result is many stations have many more than 100 Pwavelets, not necessarily a bad thing and the end user can decide how to select their data.  Without the bug, the code randomly samples within the 4 lists of earthquake sources.
-- Be careful with data from 10-30 (regional, mantle triplications) and bw 100-120 degrees (Pdiff/PKP) where the predicted arrival might be more than the +/-5s that I assumed and hence the processing may not properly align on the arrival and may not get the "Trigger" label correct.  A quick visual inspection can remedy this.
+- Be careful with data from 10-30 (regional, mantle triplications) and bw ~110-120 degrees where it's unclear whether Pdiff or PKP is the first significant arrival.  The predicted arrival might be more than the +/-5s that I assumed and hence the processing may not properly align on the arrival and may not get the "Trigger" label correct.  The cutoff distance for Pdiff in the travel time tables used to initially align things is 115 degrees.  A quick visual inspection of figures should help.
 - Be aware that some stations have multiple locations with very similar waveforms (but from different instruments).  An example is IW.WCI.00.BHZ, IW.WCI.10.BHZ, IW.WCI.00.HHZ.
 - I was a bit lazy with stations.  To form a station list I only queried stations from 2018-2020, so if there was a station that ended before 2018, it wasn't included in the data harvest.  It's very minor.  Also I ignored epochs, e.g. when a station was BHZ in older times and later got upgraded to HHZ.
 - Make x-axis time in plot for the bottom STA/LTA trace go from -25 to +35 rather than 0-60; add tick mark on the other panels for pick time.  Add a 5th panel w the 3Hz highpassed vel trace?
 
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/BHZ_vs_HHZ.jpg" width=550 alt="Same station, BHZ and HHZ" />
+Figure 5: This is an example of the same station recording the same event, but on different channels, BHZ vs HHZ.  Pay attention to the differing STA/LTA ratios.  Just an FYI...
+
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BHZ.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.png" width=550 alt="Histogram of distances" />
-- Figure caption: Clealy this event would be easy to align using an STA/LTA with a longer STA window than 0.05s.  Maybe next iteration, use an approach that take the max STA/LTA ratio of either 0.05 or 0.5 s for the STA.
+Figure 6: Clealy this event would be easy to align using an STA/LTA with a longer STA window than 0.05s.  Maybe next iteration, use an approach that take the max STA/LTA ratio of either 0.05 or 0.5 s for the STA.
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BHZ.2020.06.18T12.49.53.M7.4.d89.z10.Lat-33.2927.Lon-177.8571.stalta22.Trigger_YES.png" width=550 alt="Histogram of distances" />
-- Figure caption: Clealy this event is aligned wrong since this is being tuned for EPIC triggering which has an STA/LTA ratio threshold of 20.
+Figure 7: Clealy this event is aligned wrong since this is being tuned for EPIC triggering which has an STA/LTA ratio threshold of 20.
 
 ### Don't download data too fast!
 *IRIS IP jail and intentionally slowing down code:*  be aware of IRIS webservices which will throttle your performance.  If you have more than X concurrent connections, translation: if you make more than X requests from a single IP address, IRIS WS will block your IP for 20 sec.  
