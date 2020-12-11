@@ -4,7 +4,7 @@ There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. ava
 
 -add AQMS non-seismic noise sources
 
-## Regional and Teleseismic data set
+## Regional and Teleseismic data set first P-arrivals
 
 Data set of P-wavelets and noise from PNSN and other stations prepared for ML.
 
