@@ -1,9 +1,15 @@
-## machine_learning_pnsn_data_set
-Data set of P-wavelets and noise from PNSN and other stations for use by ML
+# Machine Learning data sets from the PNSN, west coast, and GSN stations
+
+There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. avalanches and quarry blasts.  Total size is about 20,000 files with all three components of data.  And 2) a data set of regional and teleseismic P-arrivals that is picked using an STA/LTA ratio based off of velocity data highpass filtered above 3Hz.  This is split up into West Coast, North American, Global shallow and Global deep sources.  Both data sets include strong motion and broadband data.  Only the IRIS data center was used, which limits the harvest for Southern and Northern California.
+
+-add AQMS non-seismic noise sources
+
+## Regional and Teleseismic data set
+
+Data set of P-wavelets and noise from PNSN and other stations prepared for ML.
 
 The Trigger label:
-This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>.  Notable differences is that Elarms3 has many criteria for declaring a bump a trigger.  This label only uses the two primary ones: 1) whether the STA/LTA (0.05sec/5.0sec) function of 3Hz highpassed velocity data exceeds 20 and 2) if the peak amplitude exceeds 0.000031623 m/s^2.  
--add AQMS non-seismic noise sources
+This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>.  Notable differences is that Elarms3 has many criteria for declaring a bump a trigger.  This label only uses the two primary ones: 1) whether the STA/LTA (0.05sec/5.0sec) function of 3Hz highpassed velocity data exceeds 20 and 2) if the peak amplitude exceeds 0.000031623 m/s^2.  This is true for data from strong motion stations as well as broadband stations.
 
 *Go to Shortcomings, caveats section at bottom of page to see differences w Elarms3*
 
