@@ -107,6 +107,12 @@ Files of P-waves are given in either mseed or HDF5 format.  In each file, all 3 
 
 Data are initially aligned on the predicted P wave arrival using iasp91.  From ~90 to 107 degrees P/Pdiff is the time given.  From 107 to 180 the earliest PKP arrival is used.  The data are then shifted according the STA/LTA ratio using a window of -5 to +10 seconds around the predicted P-arrival.  The shift corresponds to when the STA/LTA first exceeds 20.  If it does not exceed 20 in the window, then the data are shifted to align on the maximum of the STA/LTA function.  The window for shfited data is -5 to +10 sec.
 
+Filenames:
+d = distance, z = depth in km, Lat, Lon, max(STA/LTA ratio from -5 to +10 sec around pick time.
+Trigger: does the trace have STA/LTA ratio > 20 AND is peak amplitude on Acc trace > 0.000031623 m/s^2.
+CI.CIA.--.HH.2019.12.03T08.46.35.M6.0.d69.z38.Lat-18.5042.Lon-70.576.stalta11.Trigger_NO.hdf5
+CI.CIA.--.HH.2019.12.03T08.46.35.M6.0.d69.z38.Lat-18.5042.Lon-70.576.stalta11.Trigger_NO.mseed
+
 ### Figures
 For each output file, there is an associated figure like this one:
 
@@ -123,6 +129,11 @@ The four panels from top to bottom show:
 
 These figures are aligned with the STA/LTA 'pick' time at 25 sec in the bottom panel.  The output files are from -5 to +10 sec of this time (20 - 35 sec in this plot).
 
+Filenames:
+d = distance, z = depth in km, Lat, Lon, max(STA/LTA ratio from -5 to +10 sec around pick time.
+Trigger: does the trace have STA/LTA ratio > 20 AND is peak amplitude on Acc trace > 0.000031623 m/s^2.
+CI.CIA.--.HHZ.2019.12.03T08.46.35.M6.0.d69.z38.Lat-18.5042.Lon-70.576.stalta11.Trigger_NO.png
+
 ### Shortcomings, caveats, & things to fix before next time
 - This only downloads data from IRIS.  To get all/more of the CI/BK/NC data, update the code to first try IRIS, then SCEDC or NCEDC.  Also, see "stations used" above regarding 6 vs 3-channel sites.
 - The counter I put in to limit the number of Pwavelets for any given station to 100 had a bug and didn't get used.  The result is many stations have many more than 100 Pwavelets, not necessarily a bad thing and the end user can decide how to select their data.  Without the bug, the code randomly samples within the 4 lists of earthquake sources.
@@ -131,7 +142,7 @@ These figures are aligned with the STA/LTA 'pick' time at 25 sec in the bottom p
 - I was a bit lazy with stations.  To form a station list I only queried stations from 2018-2020, so if there was a station that ended before 2018, it wasn't included in the data harvest.  It's very minor.  Also I ignored epochs, e.g. when a station was BHZ in older times and later got upgraded to HHZ.
 - Make x-axis time in plot for the bottom STA/LTA trace go from -25 to +35 rather than 0-60; add tick mark on the other panels for pick time.  Add a 5th panel w the 3Hz highpassed vel trace?
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/BHZ_vs_HHZ.jpg" width=550 alt="Same station, BHZ and HHZ" />
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/BHZ_vs_HHZ.jpg" width=750 alt="Same station, BHZ and HHZ" />
 Figure 5: This is an example of the same station recording the same event, but on different channels, BHZ vs HHZ.  Pay attention to the differing STA/LTA ratios.  Just an FYI...
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BHZ.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.png" width=550 alt="Histogram of distances" />
