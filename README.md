@@ -110,7 +110,7 @@ Files of P-waves are given in either mseed or HDF5 format.  In each file, all 3 
 Data are initially aligned on the predicted P wave arrival using iasp91.  From ~90 to 107 degrees P/Pdiff is the time given.  From 107 to 180 the earliest PKP arrival is used.  The data are then shifted according the STA/LTA ratio using a window of -5 to +10 seconds around the predicted P-arrival.  The shift corresponds to when the STA/LTA first exceeds 20.  If it does not exceed 20 in the window, then the data are shifted to align on the maximum of the STA/LTA function.  The window for shfited data is -5 to +10 sec.
 
 ### Figures
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.VTV.--.HHZ.2017.08.08T13.19.49.M6.5.d102.z9.Lat33.1926.Lon103.8552.stalta40.Trigger_YES.png" width=550 alt="Histogram of distances" />
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.TUQ.--.BHZ.2017.04.03T17.40.18.M6.5.d143.z29.Lat-22.6784.Lon25.1558.stalta22.Trigger_YES.png" width=550 alt="Histogram of distances" />
 The four panels from top to bottom show:
 - The raw trace in counts
 - The sensitivity-corrected acceleration trace high-pass filtered above 0.075 Hz. This is used for Trigger labeling, the red line is the minimum Acc threshold for trigging EPIC (0.000031623 m/s^2).
