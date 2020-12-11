@@ -123,7 +123,7 @@ The four panels from top to bottom show:
 
 These figures are aligned with the STA/LTA 'pick' time at 25 sec in the bottom panel.  The output files are from -5 to +10 sec of this time (20 - 35 sec in this plot).
 
-###Filenames:
+### Filenames for figures and output files:
 
 d = distance, z = depth in km, Lat, Lon, max(STA/LTA ratio from -5 to +10 sec around pick time.
 
