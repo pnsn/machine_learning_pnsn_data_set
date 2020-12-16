@@ -33,11 +33,14 @@ for idist in range(0,181):
     for depth in depths:
         arrivals = []
         if ( dist < 95. ):
-            arrivals = model.get_travel_times(source_depth_in_km=depth,distance_in_degree=dist,phase_list=["pP","sP"])
+            arrivals = model.get_travel_times(source_depth_in_km=depth,distance_in_degree=dist,phase_list=["P"])
+#            arrivals = model.get_travel_times(source_depth_in_km=depth,distance_in_degree=dist,phase_list=["pP","sP"])
         elif ( dist >= 95. and dist < 115. ):
-            arrivals = model.get_travel_times(source_depth_in_km=depth,distance_in_degree=dist,phase_list=["pP","pPdiff","sP","sPdiff"])
+            arrivals = model.get_travel_times(source_depth_in_km=depth,distance_in_degree=dist,phase_list=["P","Pdiff"])
+#            arrivals = model.get_travel_times(source_depth_in_km=depth,distance_in_degree=dist,phase_list=["pP","pPdiff","sP","sPdiff"])
         else:
-            arrivals = model.get_travel_times(source_depth_in_km=depth,distance_in_degree=dist,phase_list=["pPKP","pPKIKP","sPKP","sPKIKP"])
+            arrivals = model.get_travel_times(source_depth_in_km=depth,distance_in_degree=dist,phase_list=["PKP","PKIKP"])
+#            arrivals = model.get_travel_times(source_depth_in_km=depth,distance_in_degree=dist,phase_list=["pPKP","pPKIKP","sPKP","sPKIKP"])
         TT = 9e9
         for iTT in range(0,len(arrivals)):
             if ( arrivals[iTT].time < TT ):
