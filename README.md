@@ -2,19 +2,17 @@
 
 There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. avalanches and quarry blasts.  Total size is about 20,000 files with all three components of data.  And 2) a data set of regional and teleseismic P-arrivals that is picked using an STA/LTA ratio based off of velocity data highpass filtered above 3Hz.  This is split up into West Coast, North American, Global shallow and Global deep sources.  Both data sets include strong motion and broadband data.  Only the IRIS data center was used, which limits the harvest for Southern and Northern California.
 
--add AQMS non-seismic noise sources
+Download .zip files of .hdf5, .mseed, .png files:
+https://seismo.ess.washington.edu/users/ahutko/ML_DATASET
 
 ## Regional and Teleseismic data set first P-arrivals
 
-Data set of P-wavelets from PNSN and other stations prepared for ML.
+Data set of P-wavelets from PNSN and other stations prepared for ML.  download_P_waves_teleseisms.py was used to download these files.  It's currently hardwired for making the windows be -5 to +10 sec, but it shouldn't be too hard to fudge.
 
 The Trigger label:
 This is based on the trigger criteria for <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>.  Notable differences is that Elarms3 has many criteria for declaring a bump a trigger.  The "Trigger" label here only uses the two primary ones: 1) whether the STA/LTA (0.05sec/5.0sec) function of 3Hz highpassed velocity data exceeds 20 and 2) if the peak amplitude exceeds 0.000031623 m/s^2 on sensitivity corrected acceleration traces high pass filtered above 0.075 Hz.  This is applied to data from strong motion as well as broadband stations.  All data are initially sensitivity corrected and, if needed, resampled to 100 Hz.
 
 *Go to Shortcomings, caveats section at bottom of page to see differences w Elarms3*
-
-Download tarballs of the dataset:
-https://seismo.ess.washington.edu/users/ahutko/machine_learning_pnsn_data_set
 
 ### The 4 sub data sets of sources, 2010.1 - 2020.12
 - M4.0 - M5.0 west coast:
@@ -140,6 +138,7 @@ CI.CIA.--.HH.2019.12.03T08.46.35.M6.0.d69.z38.Lat-18.5042.Lon-70.576.stalta11.Tr
 ```
 
 ### Shortcomings, caveats, & things to fix before next time
+- No instrument response was removed, only an overall sensitivity correction was applied.
 - This only downloads data from IRIS.  To get all/more of the CI/BK/NC data, update the code to first try IRIS, then SCEDC or NCEDC.  Also, see "stations used" above regarding 6 vs 3-channel sites.
 - The counter I put in to limit the number of Pwavelets for any given station to 100 had a bug and didn't get used.  The result is many stations have many more than 100 Pwavelets, not necessarily a bad thing and the end user can decide how to select their data.  Without the bug, the code randomly samples within the 4 lists of earthquake sources.
 - Be careful with data from 10-30 (regional, mantle triplications) and in the neighborhood of 115 degrees where it's unclear whether Pdiff or PKP is the first significant arrival.  The predicted arrival might be more than the +/-5s that I assumed and hence the processing may not properly align on the arrival and may not get the "Trigger" label correct.  The cutoff distance for Pdiff in the travel time tables used to initially align things is 115 degrees.  A quick visual inspection of figures should help.
@@ -160,5 +159,5 @@ Figure 6: Clealy this event would be easy to align using an STA/LTA with a longe
 Figure 7: Clealy this event is aligned wrong since this is being tuned for EPIC triggering which has an STA/LTA ratio threshold of 20.
 
 ### Don't download data too fast!
-*IRIS IP jail and intentionally slowing down code:*  be aware of IRIS webservices which will throttle your performance.  If you have more than X concurrent connections, translation: if you make more than X requests from a single IP address, IRIS WS will block your IP for 20 sec.  
-Avoid this by adding in a time.sleep(0.05) before any request and don't have more than 5 codes running simultaneously.
+*IRIS IP jail and intentionally slowing down code:*  be aware of IRIS webservices which will limit your performance.  If you have more than X concurrent connections, translation: if you make more than X requests from a single IP address, IRIS WS will block your IP for 20 sec.  
+Avoid this by adding in a time.sleep(0.05) before any request and don't have more than 5 codes running simultaneously.  This may only be an issue at UW since the DMC is in our back yard.
