@@ -2,7 +2,7 @@
 
 There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. avalanches and quarry blasts.  Total size is about 20,000 files with all three components of data.  And 2) a data set of regional and teleseismic P-arrivals that is picked using an STA/LTA ratio based off of velocity data highpass filtered above 3Hz.  This is split up into West Coast, North American, Global shallow and Global deep sources.  Both data sets include strong motion and broadband data.  Only the IRIS data center was used, which limits the harvest for Southern and Northern California.
 
-Download .zip files of .hdf5, .mseed, .png files:
+**Download** .zip files of .hdf5, .mseed, .png files:
 https://seismo.ess.washington.edu/users/ahutko/ML_DATASET
 
 ## Regional and Teleseismic data set first P-arrivals
