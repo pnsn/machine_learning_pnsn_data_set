@@ -7,7 +7,7 @@ Alex Hutko, UW, Nov 9, 2020
   a) M4.3 - M5.0 within the west coast (Lat:25to55, Lon:-135to100)
   b) M5.0+ for all North American events (Lat:20to65, Lon:-165to-75)
   c) M6.0+ globally w depth < 100km
-  d) M5.5+ globally w depth > 100km
+  d) M6.0+ globally w depth > 100km
 
 Example query using the NEIC API:
 https://prod-earthquake.cr.usgs.gov/fdsnws/event/1/query?format=xml&starttime=2014-01-01&endtime=2014-01-02&minmagnitude=5&format=text
