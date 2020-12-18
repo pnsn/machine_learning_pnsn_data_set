@@ -34,7 +34,7 @@ There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. ava
 
 ## non-earthquake seismic sources at PNSN
 
-Data set of non-seismic sources (quarry blasts, avalanches...) picked and labeled by the PNSN.  All 3 components of data are windowed -5 to +10sec, highpass filtered above 0.075 Hz on the velocity trace.
+Data set of non-seismic sources (quarry blasts, avalanches...) picked and labeled by the PNSN.  All 3 components of data are windowed -5 to +10sec relative to the pick time.  Data are sensitivity corrected velocity traces highpass filtered above 0.075 Hz.
 
 Number of files for each source type:
 
