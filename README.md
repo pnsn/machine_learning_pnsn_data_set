@@ -4,6 +4,10 @@ There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. ava
 
 **Download** .zip files of .hdf5, .mseed, .png files:
 
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_PNSN_non_earthquake_sources_HDF5.zip">MLdataset_PNSN_non_earthquake_sources_HDF5.zip 600MB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_PNSN_non_earthquake_sources_MSEED.zip">MLdataset_PNSN_non_earthquake_sources_MSEED.zip 600MB</a>
+
 <a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_WestCoast_M4_to_M5_figs.zip">MLdataset_WestCoast_M4_to_M5_figs.zip 16GB</a>
 
 <a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_NorthAmerica_gtM5_figs.zip">MLdataset_NorthAmerica_gtM5_figs.zip 8GB</a>
@@ -28,11 +32,16 @@ There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. ava
 
 <a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_global_shallow_gtM6_mseed.zip">MLdataset_global_shallow_gtM6_mseed.zip 8GB</a>
 
+## non-earthquake seismic sources at PNSN
 
-<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_PNSN_non_earthquake_sources_HDF5.zip">MLdataset_PNSN_non_earthquake_sources_HDF5.zip 600MB</a>
+Data set of non-seismic sources (quarry blasts, avalanches...) picked and labeled by the PNSN.  All 3 components of data are windowed -5 to +10sec, highpass filtered above 0.075 Hz on the velocity trace.
 
-<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_PNSN_non_earthquake_sources_MSEED.zip">MLdataset_PNSN_non_earthquake_sources_MSEED.zip 600MB</a>
-
+Number of files for each source type:
+Surface events (avalanches, mostly on volcanoes), su:  1812
+Thunder, th:  121
+Probable blasts (quarry), px:  27786
+Confirmed blasts, ex:  246
+Sonic booms, sn:  190
 
 ## Regional and Teleseismic data set first P-arrivals
 
