@@ -3,7 +3,30 @@
 There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. avalanches and quarry blasts.  Total size is about 20,000 files with all three components of data.  And 2) a data set of regional and teleseismic P-arrivals that is picked using an STA/LTA ratio based off of velocity data highpass filtered above 3Hz.  This is split up into West Coast, North American, Global shallow and Global deep sources.  Both data sets include strong motion and broadband data.  Only the IRIS data center was used, which limits the harvest for Southern and Northern California.
 
 **Download** .zip files of .hdf5, .mseed, .png files:
-https://seismo.ess.washington.edu/users/ahutko/ML_DATASET
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_WestCoast_M4_to_M5_figs.zip">MLdataset_WestCoast_M4_to_M5_figs.zip 16GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_NorthAmerica_gtM5_figs.zip">MLdataset_NorthAmerica_gtM5_figs.zip 8GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_global_deep_gtM6_figs.zip">MLdataset_global_deep_gtM6_figs.zip 6GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_global_shallow_gtM6_figs.zip">MLdataset_global_shallow_gtM6_figs.zip 19GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_WestCoast_M4_to_M5_HDF5.zip">MLdataset_WestCoast_M4_to_M5_HDF5.zip 7GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_NorthAmerica_gtM5_HDF5.zip">MLdataset_NorthAmerica_gtM5_HDF5.zip 3GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_global_deep_gtM6_HDF5.zip">MLdataset_global_deep_gtM6_HDF5.zip 3GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_global_shallow_gtM6_HDF5.zip">MLdataset_global_shallow_gtM6_HDF5.zip 8GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_WestCoast_M4_to_M5_mseed.zip">MLdataset_WestCoast_M4_to_M5_mseed.zip 7GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_NorthAmerica_gtM5_mseed.zip">MLdataset_NorthAmerica_gtM5_mseed.zip 3GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_global_deep_gtM6_mseed.zip">MLdataset_global_deep_gtM6_mseed.zip 3GB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_global_shallow_gtM6_mseed.zip">MLdataset_global_shallow_gtM6_mseed.zip 8GB</a>
 
 ## Regional and Teleseismic data set first P-arrivals
 
