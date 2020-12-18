@@ -28,6 +28,12 @@ There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. ava
 
 <a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_global_shallow_gtM6_mseed.zip">MLdataset_global_shallow_gtM6_mseed.zip 8GB</a>
 
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_PNSN_non_earthquake_sources_HDF5.zip">MLdataset_PNSN_non_earthquake_sources_HDF5.zip 600MB</a>
+
+<a href="https://seismo.ess.washington.edu/users/ahutko/ML_DATASET/MLdataset_PNSN_non_earthquake_sources_MSEED.zip">MLdataset_PNSN_non_earthquake_sources_MSEED.zip 600MB</a>
+
+
 ## Regional and Teleseismic data set first P-arrivals
 
 Data set of P-wavelets from PNSN and other stations prepared for ML.  download_P_waves_teleseisms.py was used to download these files.  It's currently hardwired for making the windows be -5 to +10 sec, but it shouldn't be too hard to fudge.
