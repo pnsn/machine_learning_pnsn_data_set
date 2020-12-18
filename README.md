@@ -37,10 +37,15 @@ There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. ava
 Data set of non-seismic sources (quarry blasts, avalanches...) picked and labeled by the PNSN.  All 3 components of data are windowed -5 to +10sec, highpass filtered above 0.075 Hz on the velocity trace.
 
 Number of files for each source type:
+
 Surface events (avalanches, mostly on volcanoes), su:  1812
+
 Thunder, th:  121
+
 Probable blasts (quarry), px:  27786
+
 Confirmed blasts, ex:  246
+
 Sonic booms, sn:  190
 
 ## Regional and Teleseismic data set first P-arrivals
