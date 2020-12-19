@@ -1,6 +1,6 @@
 # Machine Learning data sets from the PNSN, west coast, and GSN stations
 
-There are two data sets here: 1a) non-earthquake sources picked by PNSN, e.g. avalanches and quarry blasts.  Total size is about 20,000 files with all three components of data.  1b) autopicks from deleted "subnet triggers" (candidate earthquakes) deemed not to be earthquakes, i.e. noise.  Up to 400k.  (Dec 19, 2020: still being collected)  And 2) a data set of >200k regional and teleseismic P-arrivals that is picked using an STA/LTA ratio based off of velocity data highpass filtered above 3Hz.  This is split up into West Coast, North American, Global shallow and Global deep sources.  Both data sets include strong motion and broadband data.  Only the IRIS data center was used, which limits the harvest for Southern and Northern California.  All data are: 3 components, velocity traces, sensitivity corrected, and high pass filtered above 0.075 Hz, and are windowed from -5 to +10 sec relative to the "pick" which is different between the PNSN and regional+teleseismic data sets.  This processing is specific to <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>, one of the ShakeAlert algorithms.
+There are two data sets here: 1a) non-earthquake sources picked by PNSN, e.g. avalanches and quarry blasts.  Total size is about 20,000 files with all three components of data.  1b) autopicks from deleted "subnet triggers" (candidate earthquakes) deemed not to be earthquakes, i.e. noise.  Up to 400k.  (Dec 19, 2020: still being collected)  And 2) a data set of >300k regional and teleseismic P-arrivals that is picked using an STA/LTA ratio based off of velocity data highpass filtered above 3Hz.  This is split up into West Coast, North American, Global shallow and Global deep sources.  Both data sets include strong motion and broadband data.  Only the IRIS data center was used, which limits the harvest for Southern and Northern California.  All data are: 3 components, velocity traces, sensitivity corrected, and high pass filtered above 0.075 Hz, and are windowed from -5 to +10 sec relative to the "pick" which is different between the PNSN and regional+teleseismic data sets.  This processing is specific to <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>, one of the ShakeAlert algorithms.
 
 **Download** .zip files of .hdf5, .mseed, .png files:
 
@@ -102,7 +102,7 @@ Note: this only uses the IRIS FDSNWS client so many CI/BK/NC stations were not h
 
 
 ### Histograms of data
-Histograms made using make_histogram.py
+Histograms made using make_histogram.py.  Note there will be overlap in some of these datasets.
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/Distances_histogram.png" width=550 alt="Histogram of distances" />
 
