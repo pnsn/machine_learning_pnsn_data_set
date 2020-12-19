@@ -34,7 +34,7 @@ There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. ava
 
 ## non-earthquake seismic sources at PNSN
 
-Data set of non-seismic sources (quarry blasts, avalanches...) picked and labeled by the PNSN. 
+Data set of non-seismic sources (quarry blasts, avalanches...) picked and labeled by the PNSN.  Use codes get_AQMS_non_earthquake_picks.py and get_AQMS_deleted_subnet_trigger_autopicks.py to get a list of picks.  Use get_AQMS_waveforms_for_ML.py to download the resulting dataset.
 
 Number of files for each source type:
 
