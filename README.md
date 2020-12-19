@@ -88,7 +88,8 @@ https://prod-earthquake.cr.usgs.gov/fdsnws/event/1/query?&starttime=2009-12-31T2
 https://prod-earthquake.cr.usgs.gov/fdsnws/event/1/query?&starttime=2009-12-31T23:25:00&endtime=2025-01-01T01:01:00&minmagnitude=6.0&mindepth=100&format=text
 
 ### The stations used
-Note: this only uses the IRIS FDSNWS client so many CI/BK/NC stations were not harvested.  For those, add in a try statement and use the SCEDC/NCEDC clients which are trivial modifications using obspy.
+Note: this only uses the IRIS FDSNWS client so many CI/BK/NC stations were not harvested.  The remedy is trivial, just add clients by replacing 'IRIS' with 'SCEDC' and 'NCEDC' in the obspy client line of download_P_waves_teleseisms.py.
+
 - For 6-channel sites, I only collected the broadband data and not the strong motion data.  The result is that the remaining strong motion Pwavelets are from sites that are only 3 or 4 channels which are usually noisier than 6-channel sites.
 
 
