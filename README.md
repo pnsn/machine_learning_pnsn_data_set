@@ -168,6 +168,12 @@ Files of P-waves are given in either mseed or HDF5 format.  In each file, all 3 
 
 Data are initially aligned on the predicted P wave arrival using iasp91.  From ~90 to 107 degrees P/Pdiff is the time given.  From 107 to 180 the earliest PKP arrival is used.  The data are then shifted according the STA/LTA ratio using a window of -5 to +10 seconds around the predicted P-arrival.  The shift corresponds to when the STA/LTA first exceeds 20.  If it does not exceed 20 in the window, then the data are shifted to align on the maximum of the STA/LTA function.  The window for shfited data is -5 to +10 sec.
 
+Examples:
+
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5" width=550 alt="CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5" />
+
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.mseed" width=550 alt="CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.mseed" />
+
 ### Figures
 For each output file, there is an associated figure like this one:
 
