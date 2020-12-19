@@ -172,7 +172,7 @@ Examples:
 
 <a href="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5">CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5</a>
 
-<a href="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5">CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5</a>
+<a href="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.mseed">CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.mseed</a>
 
 ### Figures
 For each output file, there is an associated figure like this one:
