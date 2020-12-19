@@ -170,9 +170,9 @@ Data are initially aligned on the predicted P wave arrival using iasp91.  From ~
 
 Examples:
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5" width=550 alt="CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5" />
+<a href="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5">CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5</a>
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.mseed" width=550 alt="CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.mseed" />
+<a href="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5">CI.SLA.--.BH.2012.08.31T12.47.33.M7.6.d103.z28.Lat10.811.Lon126.638.stalta9.Trigger_NO.hdf5</a>
 
 ### Figures
 For each output file, there is an associated figure like this one:
