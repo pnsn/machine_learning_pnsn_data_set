@@ -50,7 +50,7 @@ Sonic booms, sn:  190
 
 PNSN subnet triggers are candidate events formed by AQMS that are possibly-but-not-obvious earthquakes.  What I'm calling deleted subnet triggers these candidate events that have been reviewed by a duty seismologist and deemed not to be a real earthquake.  For context, we typically pick things down to M ~1.5 if picked up on more than ~5 stations.  If one of the autopicks in the subnet trigger below happens to come from a very small very local earthquake, it's just luck, i.e. I expect this is a rare occurance.
 
-Deleted subnet triggers dataset: all of the autopicks from events that have been deleted.
+Deleted subnet triggers dataset: all of the autopicks from events that have been deleted.  There are up to 400k of these, so as of Dec 19, 2020, consider this to be a growing data set periodically updated.
 
 Non-earthquake seismic source dataset: Usually handpicked arrivals.  For things like surface events that are usually very emergent, we typically pick the earliest arriving one, i.e. closest station, at a "meh that's about where it starts" time.  For larger surface events, multiple stations will be picked.  For many small ones, only one station will be picked.  For probable blasts, these are almost always initially treated, i.e. picked, like earthquakes.
 
