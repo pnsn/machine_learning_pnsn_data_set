@@ -1,6 +1,6 @@
 # Machine Learning data sets from the PNSN, west coast, and GSN stations
 
-There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. avalanches and quarry blasts.  Total size is about 20,000 files with all three components of data.  And 2) a data set of regional and teleseismic P-arrivals that is picked using an STA/LTA ratio based off of velocity data highpass filtered above 3Hz.  This is split up into West Coast, North American, Global shallow and Global deep sources.  Both data sets include strong motion and broadband data.  Only the IRIS data center was used, which limits the harvest for Southern and Northern California.
+There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. avalanches and quarry blasts.  Total size is about 20,000 files with all three components of data.  And 2) a data set of regional and teleseismic P-arrivals that is picked using an STA/LTA ratio based off of velocity data highpass filtered above 3Hz.  This is split up into West Coast, North American, Global shallow and Global deep sources.  Both data sets include strong motion and broadband data.  Only the IRIS data center was used, which limits the harvest for Southern and Northern California.  All data are: 3 components, velocity traces, sensitivity corrected, and high pass filtered above 0.075 Hz, and are windowed from -5 to +10 sec relative to the "pick" which is different between the PNSN and regional+teleseismic data sets.  The processing is very specific to <a href="https://pubs.geoscienceworld.org/ssa/srl/article/90/2A/727/568236/Optimizing-Earthquake-Early-Warning-Performance">Elarms3</a>, one of the ShakeAlert algorithms.
 
 **Download** .zip files of .hdf5, .mseed, .png files:
 
@@ -34,7 +34,7 @@ There are two data sets here: 1) non-earthquake sources picked by PNSN, e.g. ava
 
 ## non-earthquake seismic sources at PNSN
 
-Data set of non-seismic sources (quarry blasts, avalanches...) picked and labeled by the PNSN.  All 3 components of data are windowed -5 to +10sec relative to the pick time.  Data are sensitivity corrected velocity traces highpass filtered above 0.075 Hz.
+Data set of non-seismic sources (quarry blasts, avalanches...) picked and labeled by the PNSN. 
 
 Number of files for each source type:
 
