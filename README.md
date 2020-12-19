@@ -56,7 +56,7 @@ Non-earthquake seismic source dataset: Usually handpicked arrivals.  For things 
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/deleted_subnet_trigger_and_surface_event.jpg" width=1200 alt="Deleted subnet trigge and surface event examples" />
 
-Note: There are plenty of other exotic sources not picked like the plentiful shots/kabooms from the Yakima Training Center like this deleted subnet trigger from Oct (18?) 2019 which would result in only one file (of the stations shown)- UW.MDW; the other stations are short period EHZ.  These pops have sonic moveouts.
+Note: There are plenty of other exotic sources not identified/included like the plentiful shots/kabooms from the Yakima Training Center as shown in this record secton of a deleted subnet trigger from Oct (18?) 2019.  This resulted in only one file (of the stations shown) and one source- the first pop at UW.MDW; the other stations are short period EHZ.  These pops have sonic moveouts.
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/Yakima_Training_Center_Oct18_2019.jpg" width=700 alt="Yakima Training Center shots" />
 
