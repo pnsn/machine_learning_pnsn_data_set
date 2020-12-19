@@ -1,14 +1,6 @@
 #!/home/ahutko/anaconda3/bin/python
 
 '''
-$ date -u
-Wed Jul 22 06:33:36 UTC 2020
-$ ./for_colin.py -lat 36.7 -lon -121.3 -d 3600 -dist 99999 -v
-https://prod-earthquake.cr.usgs.gov/fdsnws/event/1/query?&starttime=2020-07-22T05:33:38&endtime=2020-07-22T06:33:38&latitude=36.7&longitude=-121.3&maxradiuskm=20000&minmagnitude=3.0&format=text
- dTime   dDistKm    Date      Time      Lat    Lon    Dep  Mag MgTp Auth  Location
-  2898.0   623.5 2020-07-22 06:20:56  36.364  -97.365   1  3.6   ml  ok   Oklahoma
-  2404.0  2115.8 2020-07-22 06:12:42  55.108 -158.476  10  7.8  mww  us   98 km SSE of Perryville, Alaska
-
 Example query using the NEIC API:
 https://prod-earthquake.cr.usgs.gov/fdsnws/event/1/query?format=xml&starttime=2014-01-01&endtime=2014-01-02&minmagnitude=5&format=text
 
