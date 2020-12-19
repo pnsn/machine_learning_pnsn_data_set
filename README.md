@@ -50,7 +50,7 @@ Sonic booms, sn:  190
 
 The deleted subnet triggers are autopicks for a candidate event, a subnet trigger, that have been reviewed by the duty seismologist and deemed not to be a real earthquake.  For context, we typically pick things down to M ~1.5 if picked up on more than ~5 stations.  If one of the autopicks in the subnet trigger below happens to come from a very small very local earthquake, it's just luck, i.e. I expect this is a rare occurance.
 
-<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/deleted_subnet_trigger_and_surface_event.jpg" width=900 alt="Deleted subnet trigge and surface event examples" />
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/deleted_subnet_trigger_and_surface_event.jpg" width=1000 alt="Deleted subnet trigge and surface event examples" />
 
 ## Regional and Teleseismic data set first P-arrivals
 
