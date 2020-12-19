@@ -102,7 +102,7 @@ Note: this only uses the IRIS FDSNWS client so many CI/BK/NC stations were not h
 
 
 ### Histograms of data
-Histograms made using make_histogram.py (as of Dec 8, maybe 2/3? done collecting entire data set)
+Histograms made using make_histogram.py
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/Distances_histogram.png" width=550 alt="Histogram of distances" />
 
