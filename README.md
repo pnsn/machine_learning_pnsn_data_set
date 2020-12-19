@@ -48,9 +48,17 @@ Confirmed blasts, ex:  246
 
 Sonic booms, sn:  190
 
-The deleted subnet triggers are autopicks for a candidate event, a subnet trigger, that have been reviewed by the duty seismologist and deemed not to be a real earthquake.  For context, we typically pick things down to M ~1.5 if picked up on more than ~5 stations.  If one of the autopicks in the subnet trigger below happens to come from a very small very local earthquake, it's just luck, i.e. I expect this is a rare occurance.
+PNSN subnet triggers are candidate events formed by AQMS that are possibly-but-not-obvious earthquakes.  What I'm calling deleted subnet triggers these candidate events that have been reviewed by a duty seismologist and deemed not to be a real earthquake.  For context, we typically pick things down to M ~1.5 if picked up on more than ~5 stations.  If one of the autopicks in the subnet trigger below happens to come from a very small very local earthquake, it's just luck, i.e. I expect this is a rare occurance.
+
+Deleted subnet triggers dataset: all of the autopicks from events that have been deleted.
+
+Non-earthquake seismic source dataset: Usually handpicked arrivals.  For things like surface events that are usually very emergent, we typically pick the earliest arriving one, i.e. closest station, at a "meh that's about where it starts" time.  For larger surface events, multiple stations will be picked.  For many small ones, only one station will be picked.  For probable blasts, these are almost always initially treated, i.e. picked, like earthquakes.
 
 <img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/deleted_subnet_trigger_and_surface_event.jpg" width=1200 alt="Deleted subnet trigge and surface event examples" />
+
+Note: There are plenty of other exotic sources not picked like the plentiful shots/kabooms from the Yakima Training Center like this image from Oct (18?) 2019.  These pops have sonic moveouts.
+<img src="https://github.com/pnsn/machine_learning_pnsn_data_set/blob/main/figures/Yakima_Training_Center_Oct18_2019.png" width=900 alt="Yakima Training Center shots" />
+
 
 ## Regional and Teleseismic data set first P-arrivals
 
